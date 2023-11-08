@@ -12,16 +12,16 @@ void print_python_bytes(PyObject *p);
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
 	PyBytes_AsStringAndSize(p, &trying_str, &size);
 
-	printf(" size: %li\n", size);
-	printf(" trying string: %s\n", trying_str);
+	printf("  size: %li\n", size);
+	printf("  trying string: %s\n", trying_str);
 	if (size < 10)
-		printf(" first %li bytes:", size + 1);
+		printf("  first %li bytes:", size + 1);
 	else
 		printf("  first 10 bytes:");
 	for (i = 0; i <= size && i < 10; i++)
