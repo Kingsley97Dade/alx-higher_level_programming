@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Takes in a URL, sends a request to the URL and displays the body of the response (decoded in utf-8)"""
-import urllib.request
-import urllib.error
-import sys
+"""Takes the url & email, sends a POST request and displays the response"""
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError
+from sys import argv
 
 if __name__ == '__main__':
     req = Request(argv[1])
