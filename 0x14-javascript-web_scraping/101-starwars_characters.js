@@ -11,10 +11,10 @@ if (process.argv.length < 3) {
 }
 
 const movieId = process.argv[2];
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 // Make a GET request to the Star Wars API endpoint to fetch movie information
-request.get(apiUrl, (err, response, body) => {
+request(apiUrl, (err, response, body) => {
   if (err) {
     console.error('An error occurred while making the GET request:', err);
   } else {
