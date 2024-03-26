@@ -1,23 +1,22 @@
 #!/usr/bin/node
 
-'use strict';
-
+// reads and prints the content of a file; print error object if errors;
 const fs = require('fs');
 
-// Check if the file path argument is provided
-if (process.argv.length < 3) {
-  console.log('Usage: ./read_file.js <file_path>');
-  process.exit(1);
+function readFile (filePath) {
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(data);
+    }
+  });
 }
 
 const filePath = process.argv[2];
+if (!filePath) {
+  console.error('Usage: ./0-readme.js <file-path>');
+  process.exit(1);
+}
 
-// Read the file asynchronously with utf-8 encoding
-fs.readFile(filePath, 'utf-8', (err, data) => {
-  if (err) {
-    console.error('An error occurred while reading the file:', err);
-  } else {
-    console.log('File content:', data);
-  }
-});
-
+readFile(filePath);
