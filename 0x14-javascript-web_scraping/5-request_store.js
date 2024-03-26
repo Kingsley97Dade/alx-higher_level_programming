@@ -2,7 +2,7 @@
 
 // Gets the contents of a webpage and writes file.
 const fs = require('fs');
-const request = require('request');
+const rq = require('request');
 
 function scrapeLoremIpsum (url, filePath) {
   rq.get(url, (error, response, body) => {

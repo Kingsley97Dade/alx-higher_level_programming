@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 const fs = require('fs');
 
 // Write the content to the file asynchronously with utf-8 encoding
